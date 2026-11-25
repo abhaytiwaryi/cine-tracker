@@ -11,7 +11,7 @@ const Card = () => {
             <div className='absolute bottom-0 inset-x-0 p-3 flex flex-col items-center'>
                 <h1 className='text-3xl'>Inception</h1>
                 <span>(2019)</span>
-                <button className='flex'><Plus size={20}/>Watchlist</button>
+                <button className='flex border px-5 items-center rounded cursor-pointer'><Plus size={20}/>Watchlist</button>
             </div>
         <div>
             
