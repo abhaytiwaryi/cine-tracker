@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card'
+import Watchlist from './Watchlist'
 
 const Content = () => {
   return (
@@ -11,6 +12,9 @@ const Content = () => {
             <Card />
             <Card />
             <Card />
+        </div>
+        <div>
+            <Watchlist />
         </div>
     </div>
   )
