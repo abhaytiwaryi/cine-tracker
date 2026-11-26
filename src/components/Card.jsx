@@ -1,22 +1,20 @@
 import React from 'react'
 import { Plus } from 'lucide-react'
 
-const Card = () => {
+const Card = ({movie={} }) => {
   return (
         <div className='h-[250px] w-[200px] rounded-2xl shrink-0 relative overflow-hidden'>
             <img className='h-full w-full rounded-2xl object-cover' 
-                src="https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-                alt="" 
+                src={movie.poster}
+                alt={movie.title} 
             />
             <div className='absolute bottom-0 inset-x-0 p-3 flex flex-col items-center bg-gradient-to-t from-gray-800'>
-                <h1 className='text-3xl'>Inception</h1>
-                <span>(2019)</span>
+                <h1 className='text-3xl'>{movie.title}</h1>
+                <span>{movie.year}</span>
                 <button className='flex border px-5 items-center rounded cursor-pointer'><Plus size={20}/>Watchlist</button>
             </div>
-        <div>
-            
         </div>
-    </div>
+            
   )
 }
 
