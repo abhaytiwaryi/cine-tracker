@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from './Card'
 import Watchlist from './Watchlist'
 
 const dummyMovies = [
   {
     id: 1,
-    title: "Inception",
+    title: "Nirahua - Rikshawala",
     year: 2010,
-    poster: "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+    poster: "https://c.saavncdn.com/175/Nirhua-Rikshawala-Bhojpuri-2007-20221203160210-500x500.jpg",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const dummyMovies = [
     id: 5,
     title: "Sardar Udham",
     year: 2021,
-    poster: "https://upload.wikimedia.org/wikipedia/en/4/4e/Sardar_Udham_poster.jpg",
+    poster: "https://upload.wikimedia.org/wikipedia/en/5/5b/Sardar_Udham_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
   },
   {
     id: 6,
@@ -66,6 +66,7 @@ const dummyMovies = [
 ];
 
 const Content = () => {
+    const [watchlist, setWatchlist] = useState([])
   return (
     <div className='gap-5 p-5 flex flex-col'>
         <div>
@@ -77,7 +78,7 @@ const Content = () => {
             ))}
         </div>
         <div>
-            <Watchlist />
+            <Watchlist watchlist={watchlist}/>
         </div>
     </div>
   )
