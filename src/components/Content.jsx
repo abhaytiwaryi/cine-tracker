@@ -67,6 +67,11 @@ const dummyMovies = [
 
 const Content = () => {
     const [watchlist, setWatchlist] = useState([])
+
+    const addToWatchlist = (movie) => {
+        setWatchlist([...watchlist, movie]);
+    };
+
   return (
     <div className='gap-5 p-5 flex flex-col'>
         <div>
@@ -74,7 +79,7 @@ const Content = () => {
         </div>
         <div className='flex gap-3 overflow-x-auto scrollbar-none'>
             {dummyMovies.map((item) => (
-                <Card key={item.id} movie={item}/>
+                <Card key={item.id} movie={item} onAdd={addToWatchlist}/>
             ))}
         </div>
         <div>

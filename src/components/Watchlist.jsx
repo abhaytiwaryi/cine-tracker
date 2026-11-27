@@ -1,18 +1,15 @@
 import React from 'react'
 import Card from './Card'
 
-const Watchlist = () => {
+const Watchlist = ({watchlist}) => {
   return (
-    <div className='flex flex-col'>
-        <div className='text-2xl'>
-            <h1>My Watchlist (2)</h1>
-        </div>
-        <div className='py-5 flex gap-3 overflow-x-auto shrink-0 scrollbar-none'>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-        </div>
+    <div className='flex flex-col gap-5'>
+      <h1 className='text-2xl'>My Watchlist ({watchlist.length})</h1>
+      <div className='flex overflow-x-auto gap-3 scrollbar-none shrink-0'>
+        {watchlist.map((item) => (
+          <Card key={item.id} movie={item} />
+        ))}
+      </div>
     </div>
   )
 }
