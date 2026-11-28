@@ -69,6 +69,14 @@ const Content = () => {
     const [watchlist, setWatchlist] = useState([])
 
     const addToWatchlist = (movie) => {
+
+        const isAlreadyAdded = watchlist.some((item) => item.id === movie.id)
+
+        if(isAlreadyAdded) {
+            alert(`${movie.title} is already added to your watchlist`)
+            return
+        }
+
         setWatchlist([...watchlist, movie]);
     };
 
