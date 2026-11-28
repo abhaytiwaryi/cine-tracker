@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import Watchlist from './Watchlist'
 
@@ -66,7 +66,14 @@ const dummyMovies = [
 ];
 
 const Content = () => {
-    const [watchlist, setWatchlist] = useState([])
+    const [watchlist, setWatchlist] = useState(() => {
+        const saved= localStorage.getItem("cine_watchlist")
+        return saved? JSON.parse(saved) : [];
+    })
+
+        useEffect(() => {
+            localStorage.setItem("cine_watchlist", JSON.stringify(watchlist))
+        },[watchlist])
 
     const addToWatchlist = (movie) => {
 
